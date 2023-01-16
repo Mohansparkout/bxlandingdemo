@@ -137,6 +137,56 @@ $("#metaslider").owlCarousel({
   },
 });
 
+$("#platform-carousel").owlCarousel({
+  loop: true,
+  autoplay: true,
+  slideBy: 1,
+  margin: 30,
+  dots: false,
+  navText: [],
+  center: true,
+  nav: false,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    600: {
+      items: 1,
+    },
+    740: {
+      items: 2,
+    },
+    1024: {
+      items: 3,
+    },
+  },
+});
+
+$("#nft-carousel").owlCarousel({
+  loop: true,
+  autoplay: true,
+  slideBy: 1,
+  margin: 30,
+  dots: false,
+  navText: [],
+  center: true,
+  nav: false,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    600: {
+      items: 1,
+    },
+    740: {
+      items: 2,
+    },
+    1024: {
+      items: 3,
+    },
+  },
+});
+
 // Metaverse Hover Effect
 $(function () {
   $(".hov-two")
