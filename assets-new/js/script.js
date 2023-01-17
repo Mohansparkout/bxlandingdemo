@@ -77,7 +77,7 @@ $("#blog-carousel").owlCarousel({
       items: 1,
     },
     600: {
-      items: 2,
+      items: 1,
     },
     740: {
       items: 2,
@@ -154,7 +154,7 @@ $("#platform-carousel").owlCarousel({
       items: 1,
     },
     740: {
-      items: 2,
+      items: 1,
     },
     1024: {
       items: 3,
@@ -179,7 +179,7 @@ $("#nft-carousel").owlCarousel({
       items: 1,
     },
     740: {
-      items: 2,
+      items: 1,
     },
     1024: {
       items: 3,
