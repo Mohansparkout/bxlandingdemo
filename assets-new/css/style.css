@@ -153,14 +153,15 @@ p {
 .fixed-top .navbar-nav > li a {
   padding: 45px 0px 35px 0px;
 }
-.btn-close {
-  background: url("/assets-new/images/close-2.png");
+#offcanvasRight > .offcanvas-header > .btn-close {
+  background-image: url("/assets-new/images/close-1.png");
   outline: 0 !important;
   box-shadow: unset !important;
   background-position: center;
   background-repeat: no-repeat;
   margin-top: -50px;
 }
+
 li#menu-contact {
   padding: 30px 0px 25px 30px;
 }
@@ -173,7 +174,10 @@ li#menu-contact a {
 nav.navbar.navbar-expand-lg.fixed-top > #header-full-width {
   border: unset !important;
 }
-
+.dropdown-menu[data-bs-popper] {
+  left: 90px;
+  margin-top: 0;
+}
 li#menu-contact a:hover {
   color: #d9d9d9;
   -webkit-text-fill-color: #d9d9d9;
@@ -253,6 +257,10 @@ div#header-full-width {
     transform: scaleY(1) translateX(-50%);
     opacity: 1;
     visibility: visible;
+  }
+
+  .offcanvas {
+    right: 0;
   }
 
   .dropdown-menu {
@@ -650,6 +658,12 @@ div#header-full-width {
   padding-top: 25px;
 }
 
+.content-link img,
+.discuss-link img,
+.deploy-link img {
+  width: 50px;
+}
+
 .content-link a,
 .discuss-link a,
 .deploy-link a {
@@ -665,6 +679,13 @@ div#header-full-width {
   line-height: 22px;
   font-family: "Syne", sans-serif;
   width: fit-content;
+  padding-right: 15px;
+  transition: ease-in-out 0.3s;
+}
+.deploy-link a span:hover,
+.discuss-link a span:hover,
+.content-link a span:hover {
+  padding-right: 10px;
 }
 
 .banner-right-section img {
@@ -772,33 +793,38 @@ hr {
   border-top: unset;
 }
 
-.content-link a::after,
+/* .content-link a::after,
 .discuss-link a::after,
 .deploy-link a::after {
   display: inline;
-  padding-left: 12px;
-  /* position: absolute; */
-  top: 0px;
+
   transform: scale(1.28);
-  content: "\0279E";
+  content: "\279e";
   color: #f5d255;
+
   -webkit-transition: transform 0.3s ease-out;
   -moz-transition: transform 0.3s ease-out;
   -ms-transition: transform 0.3s ease-out;
   -o-transition: transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
+} */
+/* .content-link a:hover > .content-link a::after,
+.discuss-link a:hover > .discuss-link a::after,
+.deploy-link a:hover > .deploy-link a::after {
+  padding-left: 5px;
+} */
+.content-link a:hover {
+  color: #36e7c4;
 }
-.content-link a:hover::after,
-.discuss-link a:hover::after,
-.deploy-link a:hover::after {
+.content-link a:hover > span.link-arrow {
   -webkit-transform: translateX(15px);
   -moz-transform: translateX(15px);
   -ms-transform: translateX(15px);
   -o-transform: translateX(15px);
   transform: translateX(15px);
 }
-.content-link a:hover {
-  color: #36e7c4;
+.link-arrow {
+  padding-left: 15px;
 }
 
 .nft-heading-section {
@@ -828,8 +854,8 @@ hr {
 .business-stak > .container,
 .bx-clients > .container,
 .features > .container {
-  border-right: 1px solid rgb(217 217 217 / 30%);
-  border-left: 1px solid rgb(217 217 217 / 30%);
+  border-right: 1px solid rgb(217 217 217 / 10%);
+  border-left: 1px solid rgb(217 217 217 / 10%);
 }
 .casestudies::before,
 .our_development_process::before,
@@ -854,7 +880,7 @@ hr {
   left: 50%;
   top: 0%;
   bottom: 0%;
-  border: 1px solid rgb(217 217 217 / 10%);
+  border-right: 1px solid rgb(217 217 217 / 10%);
   content: "";
   z-index: -1;
   height: 100%;
@@ -933,7 +959,6 @@ hr {
 }
 .banners-section {
   position: relative;
-  overflow-x: hidden;
 }
 #banner-page-vector-main > .green-vector {
   left: 20%;
@@ -998,12 +1023,7 @@ hr {
   top: -30%;
   opacity: 0.1;
 }
-/* .green-vector {
-  top: 0%;
-  left: 0%;
-  opacity: 0.9;
-  filter: blur(120px);
-} */
+
 .scroll-section {
   padding-bottom: 60px;
 }
@@ -1126,6 +1146,16 @@ hr {
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+#deploy {
+  padding-left: unset;
+  padding-right: unset;
+}
+.nft_market > .content-link img,
+.blog_wrap > .content-link img {
+  width: 50px !important;
+  display: inline !important;
+  margin-bottom: unset;
+}
 
 .nft-marketplace-section {
   display: flex;
@@ -1148,17 +1178,17 @@ hr {
   border: 1px solid #36e7c4;
   border-radius: 10px;
   width: 100%;
-  min-height: 500px !important;
-  margin-top: 70px;
+  min-height: 480px !important;
+  margin-top: 80px;
   background: rgba(54, 231, 196, 0.1);
 }
 
 .item-image {
-  width: 170px;
-  height: 170px;
+  width: 200px;
+  height: 200px;
   margin: auto;
   padding-bottom: 25px;
-  margin: -120px auto 35px auto;
+  margin: -130px auto 35px auto;
 }
 
 .services-detail {
@@ -1198,11 +1228,11 @@ hr {
 }
 .discus-vector {
   position: absolute;
-  right: -50px;
+  right: 0px;
   bottom: 0px;
 }
 .discus-vector img {
-  width: 85%;
+  width: 90%;
 }
 
 .main-discuss-section {
@@ -1688,12 +1718,48 @@ hr {
 .contact_detail .form-floating .form-control {
   padding: 0px;
 }
-input#name,
-input#email,
-textarea#message {
-  padding-top: 60px;
-  padding-bottom: 20px;
+.form-field > input,
+.form-field > textarea {
+  background: transparent !important;
+  width: 100%;
+  box-shadow: none;
+  border-bottom: 1px solid #d9d9d9;
+  border-top: unset;
+  border-left: unset;
+  border-right: unset;
+  color: #d9d9d9;
   font-size: 28px;
+  line-height: 34px;
+  font-weight: 300;
+  outline: 0;
+}
+label {
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 34px;
+  opacity: 0.2;
+}
+.contact-des {
+  margin-top: 85px;
+}
+.form-field > input :focus-visible,
+.form-field > textarea:focus-visible {
+  outline: 0;
+}
+.contact-des {
+  padding-right: 12px;
+  padding-left: 12px;
+}
+.c-submit {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 65px;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+#f-submit {
+  text-align: right;
 }
 
 .form-floating > label {
@@ -1703,7 +1769,8 @@ textarea#message {
   font-size: 28px;
   font-weight: 300;
 }
-.form_submit {
+.form_submit,
+#formsubmit {
   border: 1px solid #f5d255;
   border-radius: 8px;
   font-size: 18px;
@@ -1713,7 +1780,8 @@ textarea#message {
   color: #d9d9d9;
   transition: 0.3s ease-in-out;
 }
-.form_submit:hover {
+.form_submit:hover,
+#formsubmit:hover {
   background: #f5d255;
   color: #1e1e1e;
   transition: 0.3s ease-in-out;
@@ -1877,6 +1945,7 @@ footer::after {
   transform: translate(0%, 0%);
   z-index: 11;
   background: #030813;
+  cursor: pointer;
 }
 ul.sociallinks li {
   padding-right: 60px;
@@ -1938,8 +2007,31 @@ ul.sociallinks li {
   top: 20px;
   z-index: -1;
 }
+.demo-video-link {
+  position: absolute;
+  left: 50%;
+  z-index: 1111;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.demo-video-link {
+  padding: 15px;
+  border-radius: 8px;
+  transition: ease-in 0.3s;
+  background: #4e1fa3;
+  display: none;
+}
+#video-one:hover > #play > .demo-video-link,
+.video_left_side:hover > #play > .demo-video-link,
+#videomain:hover > .demo-video-link {
+  display: block;
+}
 
-.play_btn {
+#videomain {
+  position: relative;
+}
+
+/* .play_btn {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1961,7 +2053,7 @@ ul.sociallinks li {
   color: #4e1fa3 !important;
   background: #fff;
   transition: background 0.3s all ease-in-out;
-}
+} */
 .metaverse_subheading h3 {
   font-family: Exo 2;
   font-size: 32px;
@@ -2642,9 +2734,30 @@ button:not(:disabled) {
   .virtual_process h2 {
     opacity: 0.5;
   }
+  .nft_market {
+    padding: 30px;
+
+    min-height: 450px !important;
+    margin-top: 80px;
+  }
+
+  .item-image {
+    width: 160px;
+    height: 160px;
+    margin: -110px auto 20px auto;
+  }
 }
 
 @media (max-width: 991px) {
+  .navbar-toggler:not(.btn-check) + .btn:active {
+    color: var(--bs-btn-active-color);
+    background: none;
+    border: none;
+  }
+  .banner-eclipse,
+  .banner-eclipse-alt {
+    display: none;
+  }
   .our_process_col_grap h2 {
     font-size: 80px;
     line-height: 180px;
@@ -2692,9 +2805,7 @@ button:not(:disabled) {
   .home-link-alt {
     padding: 12px 15px;
   }
-  /* .section-about img {
-    padding-bottom: 30px;
-  } */
+
   .video-section-top,
   .why-image-list {
     padding-top: 30px;
@@ -2848,7 +2959,8 @@ button:not(:disabled) {
   .form-floating > label {
     font-size: 16px;
   }
-  .form_submit {
+  .form_submit,
+  #formsubmit {
     font-size: 15px;
   }
   .cont-submit {
@@ -2977,9 +3089,6 @@ button:not(:disabled) {
     padding-right: 20px;
     padding-top: 30px;
   }
-  /* .business-stak {
-    padding: 90px 0px 0px 0px;
-  } */
 
   .meta-heading {
     font-size: 24px;
@@ -3011,7 +3120,7 @@ button:not(:disabled) {
   }
   .discus-detail {
     padding: 30px;
-    background: rgba(54, 231, 196, 0.5);
+    /* background: rgba(54, 231, 196, 0.5); */
   }
   .discus-detail {
     color: #fff !important;
@@ -3026,9 +3135,6 @@ button:not(:disabled) {
     display: none;
   }
 
-  /* .services-section {
-    padding: 75px 0px 75px 0px;
-  } */
   .nft-heading-section > .main-sub-heading {
     padding-bottom: unset;
   }
@@ -3050,7 +3156,7 @@ button:not(:disabled) {
     padding-bottom: 35px;
   }
   .nft-heading-section {
-    padding: 75px 15px 50px;
+    padding: 75px 0px 50px 0px;
   }
   .item-image {
     padding-bottom: 15px;
@@ -3185,6 +3291,9 @@ button:not(:disabled) {
     padding-top: unset;
     margin-top: 10px;
   }
+  .accordion-item > .collapse:not(.show) {
+    display: none;
+  }
 
   .collapse:not(.show) {
     display: block;
@@ -3209,18 +3318,26 @@ button:not(:disabled) {
     top: 0px;
     left: -5px;
     background: #040914;
+    right: 0px;
+  }
+  .dropdown-toggle::after {
+    color: #d9d9d9;
   }
   .navbar-nav > li a,
   .fixed-top .navbar-nav > li a {
-    padding: 20px 15px !important;
+    padding: 12px 10px !important;
   }
   .dropdown-menu.show {
     background: #040914;
   }
   li#menu-contact {
-    padding: 20px 30px;
-    max-width: 190px;
+    padding: 10px 20px;
+    max-width: 130px;
   }
+  /* .offcanvas-header .btn-close {
+    background: #d9d9d9;
+  } */
+
   .navbar-nav > li > a,
   .navbar-nav li li a,
   .fixed-top .navbar-nav li li a {
@@ -3265,6 +3382,46 @@ button:not(:disabled) {
 
   .techstack {
     padding: unset;
+  }
+  .nft_market {
+    padding: 30px;
+
+    min-height: 360px !important;
+  }
+
+  .item-image {
+    width: 160px;
+    height: 160px;
+    margin: -110px auto 20px auto;
+  }
+  .nft_market {
+    margin-top: 60px;
+  }
+  .form-field > input,
+  .form-field > textarea,
+  label {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  .contact-des {
+    margin-top: 30px;
+  }
+  .contact-des {
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+  .c-submit {
+    margin-top: 45px;
+    padding-right: 12px;
+    padding-left: 12px;
+  }
+  .name-field,
+  .email-field {
+    margin-top: 30px;
+  }
+  footer::after,
+  footer::before {
+    display: none;
   }
 }
 @media (max-width: 767px) {
@@ -3427,7 +3584,7 @@ button:not(:disabled) {
   .item-image {
     width: 130px;
     height: 130px;
-    margin: -70px auto 35px auto;
+    margin: -70px auto 15px auto;
   }
   .nft-heading-section {
     padding-top: unset;
@@ -3454,6 +3611,9 @@ button:not(:disabled) {
   }
 
   .contact_submit > #feature-link {
+    display: none;
+  }
+  .c-submit > #feature-link {
     display: none;
   }
   .contact_head h3 {
@@ -3504,6 +3664,7 @@ button:not(:disabled) {
   .list-one-alt img {
     padding-right: 15px;
     padding-top: 20px;
+    margin-bottom: 20px;
   }
 
   .meta-heading {
@@ -3546,7 +3707,7 @@ button:not(:disabled) {
   }
   .nft_market,
   .nft-marketplace-section {
-    min-height: 450px !important;
+    min-height: 370px !important;
     flex-direction: column !important;
     align-items: flex-start !important;
   }
@@ -3601,13 +3762,34 @@ button:not(:disabled) {
   .virtual_process h2 {
     display: none;
   }
-  input#name,
+  /* input#name,
   input#email,
   textarea#message {
     padding-top: 30px;
     padding-bottom: 20px;
     font-size: 20px;
+  } */
+  .list-one,
+  .list-two {
+    flex-wrap: wrap;
   }
+  .list-one-alt {
+    width: 25%;
+    text-align: center;
+  }
+  .step-two-stak {
+    flex-wrap: wrap;
+  }
+  .content-link img,
+  .discuss-link img,
+  .deploy-link img {
+    width: 30px;
+  }
+  /* .content-link a span,
+  .discuss-link a span,
+  .deploy-link a span {
+    padding-left: 10px;
+  } */
 }
 @media (max-width: 576px) {
   .navbar-nav > li > a,
@@ -3695,10 +3877,6 @@ button:not(:disabled) {
   .why-pic-list {
     text-align: center;
   }
-  .px-0 {
-    padding-right: 15px !important;
-    padding-left: 15px !important;
-  }
 
   .video-heading {
     font-size: 20px !important;
@@ -3709,12 +3887,6 @@ button:not(:disabled) {
     padding-bottom: 45px;
   }
 
-  /* .case-list {
-    padding-left: 15px !important;
-  } */
-  .nft-service-list {
-    padding-left: 15px;
-  }
   .nft-development-slider {
     padding-bottom: unset;
   }
@@ -3732,7 +3904,7 @@ button:not(:disabled) {
   }
 
   .nft_market {
-    margin-top: 80px;
+    margin-top: 40px;
   }
   .line-body-full {
     padding: 60px 0px 60px 0px;
@@ -3804,16 +3976,16 @@ button:not(:disabled) {
     font-size: 23px;
   }
 
-  /* .services-section {
-    padding: 60px 0px 60px 0px;
-  } */
+  #meta-case-study > .row,
+  .case-list > .row {
+    margin: unset;
+  }
+
   .services-detail {
     padding-top: 35px;
     padding-bottom: 45px;
   }
-  /* .nft-heading-section {
-    padding-top: 60px;
-  } */
+
   .nft_market {
     min-height: unset !important;
     padding-bottom: 50px;
@@ -3883,8 +4055,10 @@ button:not(:disabled) {
     font-size: 14px;
     padding-left: unset;
   }
-  .form_submit {
-    font-size: 15px !important;
+  .form_submit,
+  #formsubmit {
+    font-size: 16px !important;
+    padding: 6px 20px;
   }
   .contact_submit {
     justify-content: flex-start !important;
@@ -3923,11 +4097,6 @@ button:not(:disabled) {
     padding: 60px 0px 60px 0px;
   }
 
-  .section-about img {
-    width: 70%;
-    margin: auto;
-    padding-top: 15px;
-  }
   .casestudy_head > .deploy-link {
     margin-top: unset !important;
   }
@@ -3969,7 +4138,7 @@ button:not(:disabled) {
   }
   .content-link,
   .discuss-link {
-    padding-top: unset;
+    padding-top: 10px;
   }
   .nft_metaverse-list > .container,
   .meta-facts,
@@ -3983,15 +4152,44 @@ button:not(:disabled) {
     padding-top: 60px;
     padding-bottom: 30px;
   }
-  input#name,
-  input#email,
-  textarea#message {
-    padding-top: 20px;
-    padding-bottom: 10px;
-    font-size: 15px;
+  .form-field > input,
+  .form-field > textarea,
+  label {
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .contactForm > .row > .col-lg-6 {
+    padding: unset;
+  }
+  .c-submit {
+    margin-top: 25px;
   }
   .feature_text_wrap {
     padding-bottom: 20px;
+  }
+  #header-full-width {
+    margin: 0px 15px !important;
+  }
+  .row {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  textarea#description {
+    height: 40px;
+    overflow-y: hidden;
+  }
+  .pl-0 > .row {
+    margin: unset;
+  }
+  .pl-0 > .row > .pl-9 {
+    padding-left: unset;
+  }
+  #deploy {
+    padding-left: 15px;
+  }
+  .blog_wrap h3 {
+    font-size: 20px;
+    line-height: 40px;
   }
 }
 @media (max-width: 425px) {
@@ -4135,4 +4333,8 @@ button:not(:disabled) {
     padding-top: 40px;
     padding-bottom: 20px !important;
   }
+}
+
+.zsiq_floatmain.zsiq_theme1.siq_bR {
+  display: none !important;
 }

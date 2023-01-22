@@ -209,62 +209,30 @@ $(function () {
     });
 });
 
-// Video Play
-const video = document.getElementById("video1");
-const circlePlayButton = document.getElementById("play");
+// Scroll
+window.onscroll = () => {
+  toggleTopButton();
+};
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
 
-function togglePlay() {
-  if (video.paused || video.ended) {
-    video.play();
+function toggleTopButton() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("back-to-up").classList.remove("backtop");
   } else {
-    video.pause();
+    document.getElementById("back-to-up").classList.add("backtop");
   }
 }
 
-circlePlayButton.addEventListener("click", togglePlay);
-video.addEventListener("playing", function () {
-  circlePlayButton.style.opacity = 0;
-});
-video.addEventListener("pause", function () {
-  circlePlayButton.style.opacity = 1;
-});
 
-// second video
-const videoalt = document.getElementById("video2");
-const circlePlayButtonalt = document.getElementById("playlist");
-
-function togglePlay() {
-  if (video2.paused || video2.ended) {
-    video2.play();
-  } else {
-    video2.pause();
+// Passive Listeners
+jQuery.event.special.touchstart = {
+  setup: function( _, ns, handle ){
+    if ( ns.includes("noPreventDefault") ) {
+      this.addEventListener("touchstart", handle, { passive: false });
+    } else {
+      this.addEventListener("touchstart", handle, { passive: true });
+    }
   }
-}
-
-circlePlayButtonalt.addEventListener("click", togglePlay);
-videoalt.addEventListener("playing", function () {
-  circlePlayButtonalt.style.opacity = 0;
-});
-videoalt.addEventListener("pause", function () {
-  circlePlayButtonalt.style.opacity = 1;
-});
-
-// Third video
-const videofull = document.getElementById("video3");
-const circlePlayButtonmain = document.getElementById("videomain");
-
-function togglePlay() {
-  if (video3.paused || video3.ended) {
-    video3.play();
-  } else {
-    video3.pause();
-  }
-}
-
-circlePlayButtonmain.addEventListener("click", togglePlay);
-videoalt.addEventListener("playing", function () {
-  circlePlayButtonmain.style.opacity = 0;
-});
-videoalt.addEventListener("pause", function () {
-  circlePlayButtonmain.style.opacity = 1;
-});
+};
