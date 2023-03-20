@@ -33,7 +33,7 @@ do_action('generate_before_footer'); ?>
          <div class="full-width-footer-section">
             <div class="container">
       <div class="row align-items-center justify-content-between">
-        <div class="col-lg-5 col-md-12 ps-0 foote-main-logo">
+        <div class="col-lg-5 col-md-12  foote-main-logo">
           <div class="footer_logo">
             <a href="https://www.blockchainx.tech/">
               <img
